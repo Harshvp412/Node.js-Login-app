@@ -1,0 +1,23 @@
+<% if(data.length >0) { %>
+    <div class="row mt-5">
+      <div class="col -8 -auto">
+        <div class="card card-body">
+          
+          <form  >
+            <div class="form-group">
+             <% for (var i=1; i<data.length + 1 ; i++) { %>
+              <h2 class="text-center mb-3"><i class="bi bi-file-text"></i>  Notes [i]</h2>
+                  <ul>
+                    <li> <%= i %></li>
+                    <li> <%= data[i].title %></li>
+                    <li> <%= data[i].text %></li>
+                 </ul>
+              <% } %> 
+              </div>
+           
+          </form>
+        </div>
+      </div>
+    </div>
+<% } %>  
+    

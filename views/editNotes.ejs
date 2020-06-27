@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update notes</title>
+
+</head>
+<body>
+    <div class="row mt-5">
+      <div class="col-md- m-auto">
+        <div class="card card-body">
+          <h1 class="text-center mb-3"><i class="bi bi-file-text"></i> Update Notes</h1>
+    
+          <form method="POST">
+            <div class="form-group">
+              <label for="title">Title of Note</label>
+              <input
+                type="name"
+                id="title"
+                name="title"
+                class="form-control"
+                placeholder="Enter Title"
+                value="<%= items.title %>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="discription">Notes</label>
+              <input
+                type="text"
+                id="text"
+                name="text"
+                class="form-control"
+                placeholder="Enter notes"
+                value="<%= items.text %>"
+              />
+            </div>
+            <button type="submit" value="<% items._id %>" class="btn btn-primary btn-block">Updata Notes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+
+</body>
+</html>
