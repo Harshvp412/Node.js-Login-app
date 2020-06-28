@@ -16,20 +16,20 @@ router.get('/register',(req, res) => res.render('register'));
 // Register handler
 router.post('/register' , (req , res) =>{
     const { name, email , password , password2} = req.body;
-    let error =[];
+    let errors= [];
     //check field
     if(!name || !email || !password || !password2){
-        error.push({msg:'Fill all the fields'});      
+        errors.push({msg:'Fill all the fields'});      
     };
       //check password match
       if( password !== password2){
-        error.push({msg:'Password do not match'});      
+        errors.push({msg:'Password do not match'});      
     };
       //check password length
       if( password.length <3){
-        error.push({msg:'Password length should be atleast 3 characters'});      
+        errors.push({msg:'Password length should be atleast 3 characters'});      
     };
-    if(error.length >0){
+    if(errors.length >0){
         res.render('register', {
             errors,
             name,
@@ -43,7 +43,7 @@ router.post('/register' , (req , res) =>{
          .then( user =>{
              if(user){
                 //User exists
-                error.push({msg: 'Email already exists'})
+                errors.push({msg: 'Email already exists'})
                 res.render('register', {
                     errors,
                     name,
