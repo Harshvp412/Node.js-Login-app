@@ -39,7 +39,7 @@ router.post('/register' , (req , res) =>{
         });
     }else{
         //Validation passed 
-        Users.findone({email : email})
+        Users.findOne({email : email})
          .then( user =>{
              if(user){
                 //User exists
